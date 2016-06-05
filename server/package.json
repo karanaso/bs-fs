@@ -4,7 +4,7 @@
   "main": "index.js",
   "scripts": {
     "develop": "babel-watch ./source/index.js",
-    "build": "mkdir ./dist; babel --copy-files --compact --minified --source-maps false  ./source/index.js -o ./dist/bundle.js",
+    "build": "mkdir ./dist; babel --copy-files --compact --minified --source-maps false  ./source/index.js -o ./dist/bundle.js | browserify -o dist/bundle.js",
     "test": "NODE_ENV=test mocha --compilers js:babel-register --require mocha $(find source -name \"*.spec.js\")",
     "test-watch": "NODE_ENV=test mocha --compilers js:babel-register --watch --require mocha $(find source -name \"*.spec.js\")"
   },
